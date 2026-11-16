@@ -1,0 +1,177 @@
+snif 1.5.3
+"snif is not an index file"
+"simple and nice index file"
+(c) Kai Blankenhorn
+www.bitfolge.de
+kaib@bitfolge.de
+
+Updated by Robert Cooper <racooper@tamu.edu> for PHP 8.4 with Copilot.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details: <http://www.gnu.org/licenses/gpl.txt>
+
+Changelog
+
+v1.5.3	16 NOV 2026  Robert Cooper <racooper@tamu.edu>
+	updated for PHP 8.4 compatibility
+	converted PHP files to Unix line endings
+	secured downloads and thumbnails against paths escaping the script root
+	enforced hidden-file and .htaccess protections for direct file requests
+	escaped file extensions in HTML output
+
+v1.5.2	11 OCT 2004
+	added a Czech translation (thanks to Jan Pinkas)
+	added an Italian translation (thanks to Luca Soltoggio)
+	fixed an XHTML glitch in thumbnail tags
+
+v1.5.1	 18 JUL 2004
+	fixed XHTML validity
+	fixed back link not displayed
+
+v1.5	 18 JUL 2004
+	added color configuration using an external stylesheet file
+	added central configuration file for multiple installations of snif on one server
+	added a Brazilian-Portuguese translation (thanks to Caio Begotti)
+	added a Greek translation (thanks to George Yiftoyiannis)
+	added a Spanish translation (thanks to Martinp and Genaro Paez)
+	tweaked the file extensions
+	fixed some problems with access rights for thumbnail files and directory
+	fixed line-break issues in long descriptions
+	fixed a strange unicode bug that could cause broken images in Mozilla
+	fixed a bug with pictures and directories with special characters
+	fixed a download bug (download link was broken sometimes)
+	improved display for files with both thumbnail and description
+
+v1.4.8	24 JUN 2004
+	added a Japanese translation (thanks to hjbdnpmo)
+	added a Danish translation (thanks to Svend Rugaard)
+	improved fail-safe behaviour when creating the .snifthumbs directory has failed
+	improved backwards compatibility with default date format
+
+v1.4.7	21 JUN 2004
+	fixed multiple problems with special characters in file and path names
+	fixed a bug with downloading files with spaces or quotes in their names (thanks to Derick Ng)
+	added a maximum thumbnail width (thanks to Nasim)
+
+v1.4.6	18 JUN 2004
+	thumbnails now link to the original image file
+	added a Russian translation (thanks to Neptune)
+	added a Hungarian translation (thanks to Gabor Funk)
+	added a French translation (thanks to Marc Nadeau)
+
+v1.4.5	14 JUN 2004
+	added server-side thumbnail caching (needs some testing, but it seems to work well)
+	all columns (including filetype icon) can now be hidden and reordered
+	added an optional CVS version column (thanks to Holger "Holgi" Szillat)
+	added a Dutch translation (thanks to Rogier van Epen)
+	added a Norwegian translation (thanks to Kyrre Liaaen)
+	added a Polish translation (thanks to Slawomir Jucht)
+	added a Swedish translation (thanks to Elias Hedberg)
+	improved translation instructions
+	fixed some strings that were not translatable
+	added an option to always use a specific translation
+	fixed preview of animated GIFs
+	added an option to hide all directories containing a .htaccess file, no matter its contents
+	fixed default settings, forgot to reset my debug settings :-/
+
+v1.4	04 MAY 2004
+	easy translation system (language is selected automatically depending on the
+		user's browser's language setting)
+	added a German translation
+	option to reorder and hide columns
+	option to display "[ back ]" instead of ".."
+	option to always use the full width of the screen
+	special icon for the .. link
+	improved directory sorting: .. now always on first position
+	truncation of long file names (and an option for it)
+	added number of files contained in subdirectories
+	improved error messages
+	fixed possible bug with hidden files
+	fixed a bug with descriptions containing non-ASCII characters
+	thanks to Rogier van Epen for the comments
+
+v1.3.2	19 JAN 2004
+	improved HTTP cacheability of icons, thumbnails and downloads, major speedup!
+	added directory navigation in the header
+	added a thumbnail size setting
+	different index files in subdirectories are now possible
+
+v1.3.1  14 JAN 2004
+	added splitting directories on multiple pages
+	fixed some bugs with file links
+	better support for international file names
+	restored compatibility with older PHP versions (< 4.2.0, thank to Glen Solsberry)
+
+v1.3    05 JAN 2004
+	added automatic thumbnails for images (optional, requires GDlib 2)
+	added an option for case insensitive description assignment
+	added XHTML 1.1 and CSS 2.0 conformance
+	fixed a sorting bug
+	once more fixed special characters in file names
+	reduced resulting HTML size (15-20% smaller for large directories)
+
+v1.2.9  20 DEC 2003
+	stupid date format bug fixed
+	fixed download of files with special characters in their name
+	code cleanup
+
+v1.2.8  13 DEC 2003
+	settings have been split in basic and advanced settings
+	added configurable server name instead of what PHP detects (thanks to Paul Munn)
+	added configurable date and time format (thanks to Paul Munn)
+	improved default hidden file wildcards, now also hides emacs temp files (thanks to Paul Munn)
+	notices are now always suppressed
+	fixed various HTML and CSS glitches (thanks to Paul Munn)
+	fixed a bug which caused the sorting arrow not to be displayed (thanks to Paul Munn)
+	renamed and reorganized stylesheets (thanks to Paul Munn)
+
+v1.2.7  09 DEC 2003
+	cross site scripting bug fixed (thanks to Justin Hagstrom for reporting)
+	fixed a bug with the new hidden file wildcards
+
+v1.2.6  06 DEC 2003
+	improved external icons: you may now mix external and internal icons 
+	improved directory sorting (thanks to mpember at mpember dot net dot au)
+	improved default hidden files wildcards, now also hides .* (thanks to Charles Hill)
+	fixed a minor bug in file type detection (thanks to Charles Hill)
+	added more file extensions (thanks to Charles Hill)
+
+v1.2.5  26 NOV 2003
+	security fix: download would allow paths above snif directory
+
+v1.2.4  16 NOV 2003
+	added configurable separation string for description files
+	added option to use external icons
+
+v1.2.3  15 NOV 2003
+	fixed minor typos and HTML glitches
+
+v1.2.2  11 NOV 2003
+	fixed a bug where the current path wasn't properly shown in the heading
+
+v1.2.1  10 NOV 2003
+	fixed files without extension
+	suppressed warning when io functions fail
+	experimental handling of symbolic links (completely untested! Please give feedback.)
+
+v1.2    04 NOV 2003
+	put a simple file into subdirectories to have snif handle direct requests to them
+	minor bugfix
+
+v1.1a   03 NOV 2003
+	file download for Opera fixed
+
+v1.1    03 NOV 2003
+	download files instead of opening
+	better documentation
+	code cleanup
+
+v1.0    19 OCT 2003
+	initial release

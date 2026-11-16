@@ -1,7 +1,7 @@
-<?
+<?php
 /***************************************************************************
 
-snif 1.2.1
+snif 1.5.3
 "snif is not an index file"
 "simple and nice index file"
 (c) Kai Blankenhorn
@@ -25,9 +25,7 @@ GNU General Public License for more details: <http://www.gnu.org/licenses/gpl.tx
 ****************************************************************************
 
 
-Changelog:
-
-see the real snif index file
+Release history is maintained in ../CHANGELOG.
 
 
 ****************************************************************************
@@ -45,12 +43,15 @@ in the real snif index file.
 $dir = dirname($_SERVER["PHP_SELF"]);
 $pathArr = explode("/",$dir);
 
-$path = $_GET["path"];
+$path = $_GET["path"] ?? "";
+if (!is_string($path)) {
+	$path = "";
+}
 $path = str_replace("../","",$path);
-if ($path[0]=='/')
+if ($path !== "" && $path[0]=='/')
 	$path = substr($path,1);
 
 $subDirectory = $pathArr[count($pathArr)-1]."/".$path;
 
-Header("Location: ../?path=".$subDirectory);
+Header("Location: ../?".http_build_query(["path" => $subDirectory]));
 ?>

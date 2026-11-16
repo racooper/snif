@@ -1,13 +1,14 @@
 <?php 
 /***************************************************************************
 
-snif 1.5.2
+snif 1.5.3
 "snif is not an index file"
 "simple and nice index file"
 (c) Kai Blankenhorn
 www.bitfolge.de
 kaib@bitfolge.de
 
+Updated by Robert Cooper <racooper@tamu.edu> for PHP 8.4 with Copilot.
 
 THIS IS THE REAL SNIF INDEX.PHP FILE.
 
@@ -37,159 +38,7 @@ Make download icon bigger?
 pdf and ppt and xls should have own icons as well not just listed as binary
 
 
-Changelog:
-
-v1.5.2	10-11-04
-	added a Czech translation (thanks to Jan Pinkas)
-	added an Italian translation (thanks to Luca Soltoggio)
-	fixed an XHTML glitch in thumbnail tags
-
-v1.5.1	 07-18-04
-	fixed XHTML validity
-	fixed back link not displayed
-
-v1.5	 07-18-04
-	added color configuration using an external stylesheet file
-	added central configuration file for multiple installations of snif on one server
-	added a Brazilian-Portuguese translation (thanks to Caio Begotti)
-	added a Greek translation (thanks to George Yiftoyiannis)
-	added a Spanish translation (thanks to Martinp and Genaro Paez)
-	tweaked the file extensions
-	fixed some problems with access rights for thumbnail files and directory
-	fixed line-break issues in long descriptions
-	fixed a strange unicode bug that could cause broken images in Mozilla
-	fixed a bug with pictures and directories with special characters
-	fixed a download bug (download link was broken sometimes)
-	improved display for files with both thumbnail and description
-
-v1.4.8	06-24-04
-	added a Japanese translation (thanks to hjbdnpmo)
-	added a Danish translation (thanks to Svend Rugaard)
-	improved fail-safe behaviour when creating the .snifthumbs directory has failed
-	improved backwards compatibility with default date format
-
-v1.4.7	06-21-04
-	fixed multiple problems with special characters in file and path names
-	fixed a bug with downloading files with spaces or quotes in their names (thanks to Derick Ng)
-	added a maximum thumbnail width (thanks to Nasim)
-
-v1.4.6	06-18-04
-	thumbnails now link to the original image file
-	added a Russian translation (thanks to Neptune)
-	added a Hungarian translation (thanks to Gabor Funk)
-	added a French translation (thanks to Marc Nadeau)
-
-v1.4.5	06-14-04
-	added server-side thumbnail caching (needs some testing, but it seems to work well)
-	all columns (including filetype icon) can now be hidden and reordered
-	added an optional CVS version column (thanks to Holger "Holgi" Szillat)
-	added a Dutch translation (thanks to Rogier van Epen)
-	added a Norwegian translation (thanks to Kyrre Liaaen)
-	added a Polish translation (thanks to Slawomir Jucht)
-	added a Swedish translation (thanks to Elias Hedberg)
-	improved translation instructions
-	fixed some strings that were not translatable
-	added an option to always use a specific translation
-	fixed preview of animated GIFs
-	added an option to hide all directories containing a .htaccess file, no matter its contents
-	fixed default settings, forgot to reset my debug settings :-/
-
-v1.4	05-04-04
-	easy translation system (language is selected automatically depending on the
-		user's browser's language setting)
-	added a German translation
-	option to reorder and hide columns
-	option to display "[ back ]" instead of ".."
-	option to always use the full width of the screen
-	special icon for the .. link
-	improved directory sorting: .. now always on first position
-	truncation of long file names (and an option for it)
-	added number of files contained in subdirectories
-	improved error messages
-	fixed possible bug with hidden files
-	fixed a bug with descriptions containing non-ASCII characters
-	thanks to Rogier van Epen for the comments
-
-v1.3.2	01-19-04
-	improved HTTP cacheability of icons, thumbnails and downloads, major speedup!
-	added directory navigation in the header
-	added a thumbnail size setting
-	different index files in subdirectories are now possible
-
-v1.3.1  01-14-04
-	added splitting directories on multiple pages
-	fixed some bugs with file links
-	better support for international file names
-	restored compatibility with older PHP versions (< 4.2.0, thank to Glen Solsberry)
-
-v1.3    01-05-04
-	added automatic thumbnails for images (optional, requires GDlib 2)
-	added an option for case insensitive description assignment
-	added XHTML 1.1 and CSS 2.0 conformance
-	fixed a sorting bug
-	once more fixed special characters in file names
-	reduced resulting HTML size (15-20% smaller for large directories)
-
-v1.2.9  12-20-03
-	stupid date format bug fixed
-	fixed download of files with special characters in their name
-	code cleanup
-
-v1.2.8  12-13-03
-	settings have been split in basic and advanced settings
-	added configurable server name instead of what PHP detects (thanks to Paul Munn)
-	added configurable date and time format (thanks to Paul Munn)
-	improved default hidden file wildcards, now also hides emacs temp files (thanks to Paul Munn)
-	notices are now always suppressed
-	fixed various HTML and CSS glitches (thanks to Paul Munn)
-	fixed a bug which caused the sorting arrow not to be displayed (thanks to Paul Munn)
-	renamed and reorganized stylesheets (thanks to Paul Munn)
-
-v1.2.7  12-09-03
-	cross site scripting bug fixed (thanks to Justin Hagstrom for reporting)
-	fixed a bug with the new hidden file wildcards
-
-v1.2.6  12-06-03
-	improved external icons: you may now mix external and internal icons 
-	improved directory sorting (thanks to mpember at mpember dot net dot au)
-	improved default hidden files wildcards, now also hides .* (thanks to Charles Hill)
-	fixed a minor bug in file type detection (thanks to Charles Hill)
-	added more file extensions (thanks to Charles Hill)
-
-v1.2.5  11-26-03
-	security fix: download would allow paths above snif directory
-
-v1.2.4  11-16-03
-	added configurable separation string for description files
-	added option to use external icons
-
-v1.2.3  11-15-03
-	fixed minor typos and HTML glitches
-
-v1.2.2  11-11-03
-	fixed a bug where the current path wasn't properly shown in the heading
-
-v1.2.1  11-10-03
-	fixed files without extension
-	suppressed warning when io functions fail
-	experimental handling of symbolic links (completely untested! Please give feedback.)
-
-v1.2    11-04-03
-	put a simple file into subdirectories to have snif handle direct requests to them
-	minor bugfix
-
-v1.1a   11-03-03
-	file download for Opera fixed
-
-v1.1    11-03-03
-	download files instead of opening
-	better documentation
-	code cleanup
-
-v1.0    10-19-03
-	initial release
-
-
+Release history is now maintained in CHANGELOG.
 
 ****************************************************************************
 **  DESCRIPTION FILE FORMAT                                               **
@@ -344,7 +193,8 @@ $cacheThumbnails = true;
  * your server reports the wrong name if $_SERVER['HTTP_HOST'] (which is 
  * the default) is used.
  **/
-$snifServer = $_SERVER['HTTP_HOST'];
+$snifServer = $_SERVER['HTTP_HOST'] ?? "";
+$PHP_SELF = $_SERVER["PHP_SELF"] ?? "";
 //$snifServer = 'www.yourdomain.com';
 
 /**
@@ -617,41 +467,41 @@ $languageStrings = Array(
 	
 	// Czech translation by Jan Pinkas
 	"cz" => Array(
-		"Index of" => "Výpis", // displayed in the page title
-		"name" => "jméno", // column name in the file listing
+		"Index of" => "Vï¿½pis", // displayed in the page title
+		"name" => "jmï¿½no", // column name in the file listing
 		"type" => "typ", // column name in the file listing
 		"size" => "velikost", // column name in the file listing
 		"date" => "datum", // column name in the file listing
 		"description" => "popis", // column name in the file listing
 		"DATEFORMAT" => $snifDateFormat, // special string, sets the format of the date (see http://www.php.net/manual/en/function.date.php)
-		"folder" => "adresár", // a folder in the file listing
+		"folder" => "adresï¿½r", // a folder in the file listing
 		"archive" => "archiv", // an archive file in the file listing
-		"image" => "obrázek", // an image file in the file listing
+		"image" => "obrï¿½zek", // an image file in the file listing
 		"text" => "text", // a text file in the file listing
 		"HTML" => "html", // an archive file in the file listing
-		"unknown" => "nezámý", // an unknown file in the file listing
-		"valid" => "platný", // used for "valid XHTML, valid CSS"
-		"binary" => "binární", // a binary file
+		"unknown" => "nezï¿½mï¿½", // an unknown file in the file listing
+		"valid" => "platnï¿½", // used for "valid XHTML, valid CSS"
+		"binary" => "binï¿½rnï¿½", // a binary file
 		"dirup" => "nahoru", // tooltip of the .. folder icon
-		"download" => "stáhnout", // tooltip of the download icon to the left
+		"download" => "stï¿½hnout", // tooltip of the download icon to the left
 		"asc" => "sestupne", // sort in ascending order
 		"desc" => "vzestupne", // sort in descending order
 		"[ back ]" => "[ zpet ]", // special name displayed for the .. folder
-		"1 item" => "1 položka", // displayed when a subdirectory contains exactly one file or directory
-		"%d items" => "%d položky", // 0 items, 42 items; displays the number of files and directories in a subdirectory. Leave %d as it is.
-		"%s is not a subdirectory of the current directory." => "%s není podaresár toho adresáre", // leave %s as it is, it is replaced by the directory name
+		"1 item" => "1 poloï¿½ka", // displayed when a subdirectory contains exactly one file or directory
+		"%d items" => "%d poloï¿½ky", // 0 items, 42 items; displays the number of files and directories in a subdirectory. Leave %d as it is.
+		"%s is not a subdirectory of the current directory." => "%s nenï¿½ podaresï¿½r toho adresï¿½re", // leave %s as it is, it is replaced by the directory name
 		"File not found: %s" => "Soubor nenalezen: %s",  // leave %s as it is, it is replaced by the file name
-		"Illegal characters detected in URL, ignoring." => "Neplatné znaky v URL, preskakuju", // displayed when an URL parameter contains HTML special characters
-		"Illegal path specified, ignoring." => "Neplatná cesta, ignoruju", // displayed when the path URL parameter contains a potentially dangerous path
+		"Illegal characters detected in URL, ignoring." => "Neplatnï¿½ znaky v URL, preskakuju", // displayed when an URL parameter contains HTML special characters
+		"Illegal path specified, ignoring." => "Neplatnï¿½ cesta, ignoruju", // displayed when the path URL parameter contains a potentially dangerous path
 		"Bytes" => "Bajtu", // appended to the exact file size in the tooltip ("462 Bytes")
 		"B" => "B", // abbreviation of Bytes ("462 B")
 		"KB" => "KB", // abbreviation of kilobyte ("12.4 KB")
 		"MB" => "MB", // abbreviation of megabyte ("3.4 MB")
 		"GB" => "GB", // abbreviation of gigabyte ("4.3 GB")
 		"TB" => "TB",  // abbreviation of terabyte ("820 TB")
-		"pages" => "stránky", // as in "4 pages"
-		"previous" => "predchozí", // as in "previous page"
-		"next" => "následující" // as in "next page"
+		"pages" => "strï¿½nky", // as in "4 pages"
+		"previous" => "predchozï¿½", // as in "previous page"
+		"next" => "nï¿½sledujï¿½cï¿½" // as in "next page"
 	),
  	
 	"de" => Array(
@@ -1179,7 +1029,7 @@ function translate($string) {
 			$requestLanguage = $alwaysUseLanguage;
 		} else {
 			if ($requestLanguage == "") {
-				$acceptLanguages = explode(",", $_SERVER["HTTP_ACCEPT_LANGUAGE"]);
+				$acceptLanguages = explode(",", $_SERVER["HTTP_ACCEPT_LANGUAGE"] ?? "");
 				for ($i=0; $i<count($acceptLanguages) AND $requestLanguage==""; $i++) {
 					$al = substr($acceptLanguages[$i],0,2);
 					if (in_Array($al,$validLanguages)) {
@@ -1213,13 +1063,19 @@ $displayError = Array();
 
 // safify all GET variables
 foreach($_GET AS $key => $value) {
+	if (!is_string($value)) {
+		$_GET[$key] = "";
+		$displayError[] = translate("Illegal characters detected in URL, ignoring.");
+		continue;
+	}
 	$_GET[$key] = strip_tags($value);
 	if ($_GET[$key] != $value) {
 		$displayError[] = translate("Illegal characters detected in URL, ignoring.");
 	}
-	if (!get_magic_quotes_gpc()) {
-		$_GET[$key] = stripslashes($value);
-	}
+}
+
+foreach (["path", "sort", "order", "getimage", "thumbnail", "download", "start"] as $key) {
+	$_GET[$key] ??= "";
 }
 
 
@@ -1227,6 +1083,10 @@ foreach($_GET AS $key => $value) {
 if ($externalConfig!="") {
 	include($externalConfig);
 }
+
+$snifRoot = isset($_SERVER["SCRIPT_FILENAME"])
+	? realpath(dirname($_SERVER["SCRIPT_FILENAME"]))
+	: false;
 
 
 // first of all, security: prevent any unauthorized paths
@@ -1241,14 +1101,18 @@ if (!$allowSubDirs) {
 }
 
 // default sorting is by name
-if ($_GET["sort"]=="") 
+if (!in_array($_GET["sort"], ["name", "type", "size", "date", "description"], true)) {
 	$_GET["sort"] = "name";
+}
 
 // default order is ascending
-if ($_GET["order"]=="") {
+if (!in_array(strtolower($_GET["order"]), ["asc", "desc"], true)) {
 	$_GET["order"] = "asc";
 } else {
 	$_GET["order"] = strtolower($_GET["order"]);
+}
+if ($_GET["start"] !== "" && !preg_match('/^\d+$/D', $_GET["start"])) {
+	$_GET["start"] = "";
 }
 
 // hide descriptions column if no description file is specified
@@ -1314,7 +1178,7 @@ if ($_GET["getimage"]!="") {
 		"blank"    => "R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==",
 		"unknown"  => "R0lGODlhEAAQAJECAAAAAP///////wAAACH5BAEAAAIALAAAAAAQABAAAAI1lICZxgYBY0DNyfhAfXcuxnkI1nCjB2lgappld6qWdE4vFtprR+4sffv1ZjwdkSc7KJYUQQEAOw=="
 	);
-	$imageDataEnc = $imagesEncoded[$_GET["getimage"]];
+	$imageDataEnc = $imagesEncoded[$_GET["getimage"]] ?? null;
 	if ($imageDataEnc) {
 		$maxAge = 31536000; // one year
 		doConditionalGet($_GET["getimage"], gmmktime(1,0,0,1,1,2004));
@@ -1334,13 +1198,25 @@ if ($_GET["thumbnail"]!="") {
 	GLOBAL $thumbnailHeight, $cacheThumbnails;
 	$thumbnailCacheSubdir = ".snifthumbs";
 	
-	$file = safeDirectory(urldecode($_GET["thumbnail"]));
+	$thumbnail = safeDirectory(urldecode($_GET["thumbnail"]));
+	$file = resolvePathWithinSnifRoot($thumbnail);
+	if (
+		$file === false
+		|| !is_file($file)
+		|| fileIsHidden($file)
+		|| hasProtectedParent($file)
+	) {
+		http_response_code(404);
+		die();
+	}
 	doConditionalGet($_GET["thumbnail"],filemtime($file));
 
-	$thumbDir = dirname($file)."/".$thumbnailCacheSubdir;
-	$thumbFile = $thumbDir."/".basename($file);
+	$thumbDir = dirname($file).DIRECTORY_SEPARATOR.$thumbnailCacheSubdir;
+	$thumbFile = $thumbDir.DIRECTORY_SEPARATOR.basename($file);
 	if ($cacheThumbnails) {
-		if (file_exists($thumbDir)) {
+		if (is_link($thumbDir)) {
+			$cacheThumbnails = false;
+		} elseif (file_exists($thumbDir)) {
 			if (!is_dir($thumbDir)) {
 				$cacheThumbnails = false;
 			}
@@ -1351,9 +1227,14 @@ if ($_GET["thumbnail"]!="") {
 				$cacheThumbnails = false;
 			}
 		}
-		if (file_exists($thumbFile)) {
+		if (is_link($thumbFile)) {
+			$cacheThumbnails = false;
+		}
+		if ($cacheThumbnails && file_exists($thumbFile)) {
 			if (filemtime($thumbFile)>=filemtime($file)) {
-				Header("Location: ".dirname($_SERVER["PHP_SELF"])."/".$thumbFile);
+				$thumbUrlPath = substr($thumbFile, strlen($snifRoot) + 1);
+				$thumbUrlPath = implode("/", array_map("rawurlencode", explode(DIRECTORY_SEPARATOR, $thumbUrlPath)));
+				Header("Location: ".dirname($_SERVER["PHP_SELF"])."/".$thumbUrlPath);
 				die();
 			}
 		}
@@ -1380,11 +1261,11 @@ if ($_GET["thumbnail"]!="") {
 		readfile($file);
 	} else {
 		if ($srcWidth > $srcHeight) {
-			$thumbWidth = $thumbnailWidth;
-			$thumbHeight = $thumbWidth / $srcAspectRatio;
+			$thumbWidth = max(1, (int)$thumbnailWidth);
+			$thumbHeight = max(1, (int)($thumbWidth / $srcAspectRatio));
 		} else {
-			$thumbHeight = $thumbnailHeight;
-			$thumbWidth = $thumbHeight * $srcAspectRatio;
+			$thumbHeight = max(1, (int)$thumbnailHeight);
+			$thumbWidth = max(1, (int)($thumbHeight * $srcAspectRatio));
 		}
 		if (function_exists('imagecreatetruecolor')) {
 			$thumb = imagecreatetruecolor($thumbWidth, $thumbHeight);
@@ -1406,15 +1287,18 @@ if ($_GET["thumbnail"]!="") {
 
 // handle download requests
 if ($_GET["download"]!="") {
-	$download = stripslashes($_GET["download"]);
-	$filename = safeDirectory($path.rawurldecode($download));
+	$download = $_GET["download"];
+	$requestedFilename = safeDirectory($path.rawurldecode($download));
+	$filename = resolvePathWithinSnifRoot($requestedFilename);
 	if (
-		!file_exists($filename)
-		OR fileIsHidden($filename)
-		OR (substr(strtolower($filename), -4)==".php" AND !$allowPHPDownloads)) {
+		$filename === false
+		|| !is_file($filename)
+		|| fileIsHidden($filename)
+		|| hasProtectedParent($filename)
+		|| (substr(strtolower($filename), -4)==".php" && !$allowPHPDownloads)) {
 		
 		Header("HTTP/1.0 404 Not Found");
-		$displayError[] = sprintf(translate("File not found: %s"), $filename);
+		$displayError[] = sprintf(translate("File not found: %s"), $requestedFilename);
 	} else {
 		//doConditionalGet($filename, filemtime($filename));
 		Header("Content-Length: ".filesize($filename));
@@ -1470,7 +1354,7 @@ function doConditionalGet($file, $timestamp) {
 function safeDirectory($path) {
 	GLOBAL $displayError;
 	$result = $path;
-	if (strpos($path,"..")!==false)
+	if (strpos($path,"..")!==false || strpos($path,"\0")!==false)
 		$result = "";
 	if (substr($path,0,1)=="/") {
 		$result = "";
@@ -1481,12 +1365,52 @@ function safeDirectory($path) {
 	return $result;
 }
 
+function resolvePathWithinSnifRoot($relativePath) {
+	GLOBAL $snifRoot;
+	if ($snifRoot === false) {
+		return false;
+	}
+
+	$resolvedPath = realpath($snifRoot.DIRECTORY_SEPARATOR.$relativePath);
+	if ($resolvedPath === false) {
+		return false;
+	}
+
+	$rootPrefix = rtrim($snifRoot, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
+	if ($resolvedPath !== $snifRoot && strpos($resolvedPath, $rootPrefix) !== 0) {
+		return false;
+	}
+
+	return $resolvedPath;
+}
+
+function hasProtectedParent($filename) {
+	GLOBAL $snifRoot, $protectDirsWithHtaccess;
+	if (!$protectDirsWithHtaccess || $snifRoot === false) {
+		return false;
+	}
+
+	$rootPrefix = rtrim($snifRoot, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
+	$directory = dirname($filename);
+	while ($directory === $snifRoot || strpos($directory, $rootPrefix) === 0) {
+		if (file_exists($directory.DIRECTORY_SEPARATOR.".htaccess")) {
+			return true;
+		}
+		if ($directory === $snifRoot) {
+			break;
+		}
+		$directory = dirname($directory);
+	}
+
+	return false;
+}
+
 
 /**
  * Formats a file's size nicely (750 B, 3.4 KB etc.)
  **/
 function niceSize($size) {
-	define("SIZESTEP", 1024.0);
+	$sizeStep = 1024.0;
 	static $sizeUnits = Array();
 	if (count($sizeUnits)==0) {
 		$sizeUnits[] = "&nbsp;".translate("B");
@@ -1500,8 +1424,8 @@ function niceSize($size) {
 		return "";
 	
 	$unitIndex = 0;
-	while ($size>SIZESTEP) {
-		$size = $size / SIZESTEP;
+	while ($size>$sizeStep) {
+		$size = $size / $sizeStep;
 		$unitIndex++;
 	}
 	
@@ -1516,12 +1440,12 @@ function niceSize($size) {
  * Compare two strings or numbers. Return values as strcmp().
  **/
 function myCompare($arrA, $arrB, $caseSensitive=false) {
-	$a = $arrA[$_GET["sort"]];
-	$b = $arrB[$_GET["sort"]];
+	$a = $arrA[$_GET["sort"]] ?? "";
+	$b = $arrB[$_GET["sort"]] ?? "";
 	
 	// sort .. first
-	if ($arrA["isBack"]) return -1;
-	if ($arrB["isBack"]) return 1;
+	if ($arrA["isBack"] ?? false) return -1;
+	if ($arrB["isBack"] ?? false) return 1;
 	// sort directories above everything else
 	if ($arrA["isDirectory"]!=$arrB["isDirectory"]) {
 		$result = $arrB["isDirectory"]-$arrA["isDirectory"];
@@ -1607,14 +1531,14 @@ function getFileType($fileInfo) {
 	}
 
 	if ($fileInfo["isDirectory"]) {
-		if ($fileInfo["isBack"]) {
+		if ($fileInfo["isBack"] ?? false) {
 			return "dirup";
 		} else {
 			return "folder";
 		}
 	}
 	
-	$type = $extensions[strtolower($extension)];
+	$type = $extensions[strtolower($extension)] ?? "";
 	if ($type=="") {
 		return "unknown";
 	} else {
@@ -1624,7 +1548,7 @@ function getFileType($fileInfo) {
 
 function getIcon($fileType) {
 	GLOBAL $useExternalImages, $externalIcons;
-	if ($useExternalImages && $externalIcons[$fileType]!="") {
+	if ($useExternalImages && ($externalIcons[$fileType] ?? "")!="") {
 		return $externalIcons[$fileType];
 	} else {
 		return $_SERVER["PHP_SELF"]."?getimage=$fileType";
@@ -1645,7 +1569,7 @@ function dirContainsHtAccess($dirname) {
 
 // checks if a file is hidden from view
 function fileIsHidden($filename) {
-	GLOBAL $hiddenFilesWholeRegex,$protectDirsWithHtaccess;
+	GLOBAL $hiddenFilesWholeRegex, $protectDirsWithHtaccess, $snifRoot;
 	
 	if (is_dir($filename) && $protectDirsWithHtaccess) {
 		if (!($filename=="." || $filename=="..")) {
@@ -1656,7 +1580,22 @@ function fileIsHidden($filename) {
 			}
 		}
 	}
-	return preg_match($hiddenFilesWholeRegex,$filename);
+
+	$relativeFilename = $filename;
+	if ($snifRoot !== false) {
+		$rootPrefix = rtrim($snifRoot, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
+		if ($filename === $snifRoot) {
+			$relativeFilename = ".";
+		} elseif (strpos($filename, $rootPrefix) === 0) {
+			$relativeFilename = substr($filename, strlen($rootPrefix));
+		}
+	}
+	foreach (explode(DIRECTORY_SEPARATOR, $relativeFilename) as $pathComponent) {
+		if (preg_match($hiddenFilesWholeRegex, $pathComponent)) {
+			return true;
+		}
+	}
+	return false;
 }
 
 
@@ -1678,7 +1617,7 @@ function getDescription($filename) {
 	if (!$descriptionFilenamesCaseSensitive) {
 		$filename = strtolower($filename);
 	}
-	return $descriptions[$filename];
+	return $descriptions[$filename] ?? "";
 }
 
 function getPageLink($startNumber, $linkText, $linkTitle="") {
@@ -1713,8 +1652,9 @@ function getPagingHeader() {
 	if ($pageStart+$usePaging<count($files)) {
 		$header.= getPageLink($pageStart+$usePaging, "&raquo;", translate("next"));
 	}
-	foreach($displayPages as $i => $pageNumber) {
-		if ($pageNumber-$displayPages[$i-1] > 1) {
+	$previousPage = null;
+	foreach($displayPages as $pageNumber) {
+		if ($previousPage !== null && $pageNumber - $previousPage > 1) {
 			$header.= ".. ";
 		}
 		if ($pageNumber==$pagingActualPage) {
@@ -1722,6 +1662,7 @@ function getPagingHeader() {
 		} else {
 			$header.= getPageLink($pageNumber*$usePaging, $pageNumber+1);
 		}
+		$previousPage = $pageNumber;
 	}
 	
 	return $header;
@@ -1830,7 +1771,7 @@ while($entry = $dir->read()) {
 	if (!$allowSubDirs AND is_dir($entry))
 		continue;
 	
-	$f = Array();
+	$f = Array("isBack" => false, "fullSize" => "");
 
 	$f["name"] = $entry;
 	$f["isDownloadable"] = (substr(strtolower($entry), -4)!=".php") || $allowPHPDownloads;
@@ -1843,7 +1784,7 @@ while($entry = $dir->read()) {
 	//$f["shortDate"] = strftime("%x");
 	$f["description"] = getDescription($entry);
 	if ($f["isDirectory"]) {
-		$f["type"] = "&lt;DIR&gt;";
+		$f["type"] = "<DIR>";
 		$f["size"] = "";
 		$f["niceSize"] = "";
 		
@@ -1882,7 +1823,7 @@ while($entry = $dir->read()) {
 			$pi = pathinfo($linkTarget);
 			$scriptDir = dirname($_SERVER["SCRIPT_FILENAME"]);
 			if (strpos($pi["dirname"], $scriptDir)===0) {
-				$f["type"] = "&lt;LINK&gt;";
+				$f["type"] = "<LINK>";
 				// links have no date, so take the target's date
 				$f["date"] = filemtime($linkTarget);
 				$f["link"] = $path.urlencode(substr($linkTarget, strlen($scriptDir)+1));
@@ -1896,14 +1837,14 @@ while($entry = $dir->read()) {
 			$f["fullSize"] = number_format($fSize,0,".",",");
 			$f["niceSize"] = nicesize($fSize);
 			$pi = pathinfo($entry);
-			$f["type"] = $pi["extension"];
+			$f["type"] = $pi["extension"] ?? "";
 			$f["link"] = myEncode($path,$entry);
 			if (in_array("cvsversion", $displayColumns)) {
 				$f["cvsversion"] = getVersion($entry);
 			}
 		}
 	}
-	if (!$f["isBack"]) {
+	if (!($f["isBack"] ?? false)) {
 		$f["displayName"] = htmlentities(iTrunc($f["name"], $truncateLength));
 	}
 	$f["filetype"] = getFileType($f);
@@ -2091,7 +2032,7 @@ if (count($displayError)>0) {
 				echo "/<a href=\"$dirLink\">".htmlentities($pathArr[$i])."</a>";
 			}
 			?><br/>
-			<span class="snifSmaller"><?php echo $descriptions["."];?></span>
+			<span class="snifSmaller"><?php echo $descriptions["."] ?? "";?></span>
 		</td>
 	</tr>
 	<?php 
@@ -2216,7 +2157,7 @@ if (count($displayError)>0) {
 				
 				case "type":
 					echo "<td>";
-					echo $files[$i]["type"];
+					echo htmlspecialchars($files[$i]["type"], ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8");
 					echo "</td>";
 					break;
 				
@@ -2271,7 +2212,7 @@ if (count($displayError)>0) {
 <div class="snCopyright">
 <br/>
 <a href="http://www.bitfolge.de/snif">
-snif 1.5.2
+snif 1.5.3
 &copy; 2003-04 Kai Blankenhorn</a><br/>
 <a href="http://validator.w3.org/check/referer"><?php echo translate("valid");?> XHTML 1.1</a>
 <a href="http://jigsaw.w3.org/css-validator/check/referer"><?php echo translate("valid");?> CSS 2</a>
