@@ -8,7 +8,6 @@ snif 1.5.3
 www.bitfolge.de
 kaib@bitfolge.de
 
-
 THIS IS THE SUBDIR/INDEX.PHP FILE.
 
 

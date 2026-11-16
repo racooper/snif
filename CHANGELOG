@@ -6,6 +6,7 @@ www.bitfolge.de
 kaib@bitfolge.de
 
 Updated by Robert Cooper <racooper@tamu.edu> for PHP 8.4 with Copilot.
+New location: https://github.com/racooper/snif
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -22,6 +23,7 @@ Changelog
 v1.5.3	16 NOV 2026  Robert Cooper <racooper@tamu.edu>
 	updated for PHP 8.4 compatibility
 	converted PHP files to Unix line endings
+	replaced defunct bitfolge.de link to point to new github repo
 	secured downloads and thumbnails against paths escaping the script root
 	enforced hidden-file and .htaccess protections for direct file requests
 	escaped file extensions in HTML output

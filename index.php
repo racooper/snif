@@ -9,6 +9,7 @@ www.bitfolge.de
 kaib@bitfolge.de
 
 Updated by Robert Cooper <racooper@tamu.edu> for PHP 8.4 with Copilot.
+New location: https://github.com/racooper/snif
 
 THIS IS THE REAL SNIF INDEX.PHP FILE.
 
@@ -2211,7 +2212,7 @@ if (count($displayError)>0) {
 </table>
 <div class="snCopyright">
 <br/>
-<a href="http://www.bitfolge.de/snif">
+<a href="https://github.com/racooper/snif">
 snif 1.5.3
 &copy; 2003-04 Kai Blankenhorn</a><br/>
 <a href="http://validator.w3.org/check/referer"><?php echo translate("valid");?> XHTML 1.1</a>
